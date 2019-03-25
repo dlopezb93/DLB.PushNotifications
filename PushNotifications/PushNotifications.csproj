@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Daniel López Bayo</Authors>
+    <Company />
+    <Copyright>Daniel López Bayo</Copyright>
+    <Description>Base package for sending notifications using the Firebase and APNS services. Integration with the IoC Microsoft.Extensions.DependencyInjection</Description>
+    <PackageReleaseNotes></PackageReleaseNotes>
+    <PackageId>DLB.PushNotifications</PackageId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.2.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+    <PackageReference Include="RestSharp" Version="106.6.9" />
+  </ItemGroup>
+  
+</Project>
