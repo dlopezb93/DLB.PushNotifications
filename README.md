@@ -57,7 +57,7 @@ services.AddPushNotifications(p =>
 });
 ```
 
-To send a Push Notifications only need inject 'IPushNotificationsFacade' interface and use 'SendPushNotificationAsync' method  async.
+To send a Push Notifications only need inject 'IPushNotificationsFacade' interface and use 'SendPushNotificationAsync' method  async. In this example I used a DomainEvent with DomainEventHandler, however it can be used in any situation
 
 ```sh
 public DomainEventHandler(ILogger<UserNotificationInsertedDomainEventHandler> logger,
