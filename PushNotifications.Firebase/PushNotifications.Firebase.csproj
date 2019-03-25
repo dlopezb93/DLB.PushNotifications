@@ -6,14 +6,14 @@
     <Description>Implementation of the Firebase service to send push notifications. Integration with IoC Microsoft.Extension.DependencyInjection</Description>
     <Copyright>Daniel López Bayo</Copyright>
     <PackageId>DLB.PushNotifications.Firebase</PackageId>
+    <PackageProjectUrl>https://github.com/danipro1993/DLB.PushNotifications</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/danipro1993/DLB.PushNotifications</RepositoryUrl>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="DLB.PushNotifications" Version="1.0.0" />
     <PackageReference Include="Microsoft.Extensions.Logging" Version="2.2.0" />
     <PackageReference Include="RestSharp" Version="106.6.9" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\PushNotifications\PushNotifications.csproj" />
   </ItemGroup>
 </Project>
