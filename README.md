@@ -10,7 +10,7 @@ DLB.PushNotifications is a extensible library to use push notifications in easy 
 Install base the dependencies:
 
 ```sh
-Install-Package DLB.PushNotifications -Version 1.0.0
+Install-Package DLB.PushNotifications -Version 1.0.1
 ```
 Then in Startup.cs file (or anything) add next line:
 ```sh
