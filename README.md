@@ -34,8 +34,8 @@ DLB.PushNotifications.Firebase is a extensible library to use firebase push noti
 Install base the dependencies:
 
 ```sh
-Install-Package DLB.PushNotifications -Version 1.0.0
-Install-Package DLB.PushNotifications.Firebase -Version 1.0.0
+Install-Package DLB.PushNotifications -Version 1.0.1
+Install-Package DLB.PushNotifications.Firebase -Version 1.0.1
 ```
 
 ### Usage
