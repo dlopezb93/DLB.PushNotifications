@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PushNotifications.Firebase"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PushNotifications", "PushNotifications\PushNotifications.csproj", "{5E29C435-251D-4E33-B19C-BD4134AB28D6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PushNotifications.APNS", "PushNotifications.APNS\PushNotifications.APNS.csproj", "{E42CFBEA-7779-42F5-8783-B60D36ACED52}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{5E29C435-251D-4E33-B19C-BD4134AB28D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E29C435-251D-4E33-B19C-BD4134AB28D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E29C435-251D-4E33-B19C-BD4134AB28D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E42CFBEA-7779-42F5-8783-B60D36ACED52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E42CFBEA-7779-42F5-8783-B60D36ACED52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E42CFBEA-7779-42F5-8783-B60D36ACED52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E42CFBEA-7779-42F5-8783-B60D36ACED52}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
