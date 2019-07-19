@@ -2,6 +2,16 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Description>DLB.PushNotifications for apns</Description>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageLicenseUrl>https://github.com/danipro1993/DLB.PushNotifications</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/danipro1993/DLB.PushNotifications</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/danipro1993/DLB.PushNotifications</RepositoryUrl>
+    <Authors>Daniel López Bayo</Authors>
+    <Company>Daniel López Bayo</Company>
+    <Product>DLB.PushNotifications.APNS</Product>
+    <PackageId>DLB.PushNotifications.APNS</PackageId>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
