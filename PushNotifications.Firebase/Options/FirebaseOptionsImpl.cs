@@ -1,7 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using PushNotifications.Contracts;
 using PushNotifications.Firebase.Services;
-using PushNotifications.Strategies;
 using System;
 
 namespace PushNotifications.Firebase.Options
@@ -24,7 +23,7 @@ namespace PushNotifications.Firebase.Options
 
             services.AddTransient<RestSharp.RestClient>();
             services.AddSingleton<AuthFirebase>();
-            services.AddSingleton<IFirebaseSenderNotification, FirebaseService>();
+            services.AddScoped<ISenderNotification, FirebaseService>();
         }
     }
 }

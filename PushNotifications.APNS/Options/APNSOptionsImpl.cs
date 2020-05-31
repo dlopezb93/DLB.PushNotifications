@@ -1,7 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using PushNotifications.APNS.Helpers;
 using PushNotifications.APNS.Services;
+using PushNotifications.APNS.Strategies;
 using PushNotifications.Contracts;
-using PushNotifications.Strategies;
 using System;
 
 namespace PushNotifications.APNS.Options
@@ -21,8 +22,19 @@ namespace PushNotifications.APNS.Options
 
             _configure?.Invoke(options);
 
+            if (options.DeliveryType == DeliveryType.Token)
+            {
+                services.AddScoped<ISendNotificationStrategy, TokenNotificationStrategy>();
+            }
+            else
+            {
+                services.AddScoped<ISendNotificationStrategy, SocketNotificationStrategy>();
+            }
+
+            services.AddHttpClient();
             services.AddSingleton(options);
-            services.AddSingleton<IAPNSSenderNotification, APNSService>();
+            services.AddScoped<ISenderNotification, APNSService>();
+            services.AddScoped<JwtHelper>();
         }
     }
 }

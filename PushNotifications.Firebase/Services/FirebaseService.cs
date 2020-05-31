@@ -1,14 +1,15 @@
 ﻿using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using PushNotifications.Contracts;
+using PushNotifications.Enums;
 using PushNotifications.Firebase.Options;
 using PushNotifications.Models;
-using PushNotifications.Strategies;
 using RestSharp;
 using System.Threading.Tasks;
 
 namespace PushNotifications.Firebase.Services
 {
-    public class FirebaseService : BaseService, IFirebaseSenderNotification
+    public class FirebaseService : BaseService, ISenderNotification
     {
         private readonly FirebaseOptions _options;
         private readonly ILogger<FirebaseService> _logger;
@@ -21,6 +22,8 @@ namespace PushNotifications.Firebase.Services
             _options = options ?? throw new System.ArgumentNullException(nameof(options));
             _logger = logger ?? throw new System.ArgumentNullException(nameof(logger));
         }
+
+        public Platform Platform => Platform.Android;
 
         public Task SendNotificationAsync(Message message)
         {
