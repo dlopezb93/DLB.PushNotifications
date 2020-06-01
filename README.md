@@ -24,38 +24,7 @@ services.AddPushNotifications(p =>
    
 });
 ```
-
-
-### DLB.Push.Notifications.Firebase
-### Installation
-
-DLB.PushNotifications.Firebase is a extensible library to use firebase push notifications in easy way. To use this packge is neccesarry install DLB.PushNotificaions and DLB.PushNotifications.Firebase
-
-Install base the dependencies:
-
-```sh
-Install-Package DLB.PushNotifications -Version 1.0.1
-Install-Package DLB.PushNotifications.Firebase -Version 1.0.1
-```
-
 ### Usage
-Then in Startup.cs file (or anything) add next lines to add firebase integration:
-```sh
-using PushNotifications.Extensions;
-using PushNotifications.Firebase.Extensions
-```
-
-Finally in ServiceCollection class, we have avaible a extension method:
-```sh
-services.AddPushNotifications(p =>
-{
-        p.UseFirebase(conf =>
-        {
-            conf.FirebaseEndPoint = <FIREBASE_ENDPOINT>;
-            conf.SenderId = <SENDER_ID>;
-        });
-});
-```
 
 To send a Push Notifications only need inject 'IPushNotificationsFacade' interface and use 'SendPushNotificationAsync' method  async. In this example I used a DomainEvent with DomainEventHandler, however it can be used in any situation
 
@@ -76,3 +45,85 @@ public DomainEventHandler(ILogger<UserNotificationInsertedDomainEventHandler> lo
             msg.Notification = payload;
             await _pushNotifications.SendPushNotificationAsync(msg);
         }
+		
+```
+
+### DLB.Push.Notifications.Firebase
+### Installation
+
+DLB.PushNotifications.Firebase is a extensible library to use firebase push notifications in easy way. To use this packge is neccesarry install DLB.PushNotificaions and DLB.PushNotifications.Firebase
+
+Install base the dependencies:
+
+```sh
+Install-Package DLB.PushNotifications
+Install-Package DLB.PushNotifications.Firebase
+```
+
+### Configure
+Then in Startup.cs file (or anything) add next lines to add firebase integration:
+```sh
+using PushNotifications.Extensions;
+using PushNotifications.Firebase.Extensions
+```
+
+Finally in ServiceCollection class, we have avaible a extension method:
+```sh
+services.AddPushNotifications(p =>
+{
+        p.UseFirebase(conf =>
+        {
+            conf.FirebaseEndPoint = <FIREBASE_ENDPOINT>;
+            conf.SenderId = <SENDER_ID>;
+        });
+});
+```
+
+### DLB.Push.Notifications.APNS
+### Installation
+
+Install-Package DLB.PushNotifications.APNS
+
+### Configure
+You can use DLB.PushNotifications.APNS with two ways:
+
+- Token (p8 certifcate)
+- Socket (p12/pfx certificate)
+
+#### Token (p8 certifcate)
+
+In Startup.cs add the following lines:
+
+```csharp
+services.AddPushNotifications(p =>
+            {
+                p.UseAPNS(conf =>
+                {
+                    conf.DeliveryType = PushNotifications.APNS.Options.DeliveryType.Token;
+                    conf.TokenOptions = new PushNotifications.APNS.Options.TokenOptions()
+                    {
+                        APNSEndPoint = settings.APNSEndPoint,
+                        BundleId = settings.APNSBundleId,
+                        KeyId = settings.APNSKeyId,
+                        TeamId = settings.APNSTeamId,
+                        P8CertificatePath = settings.APNSCertificate,
+                    };
+                });
+            });
+```
+
+#### Socket (p12/pfx certificate)
+
+```csharp
+services.AddPushNotifications(p =>
+            {
+                p.UseAPNS(conf =>
+                {
+                    conf.DeliveryType = PushNotifications.APNS.Options.DeliveryType.Socket;
+                    conf.TokenOptions = new PushNotifications.APNS.Options.SocketOptions()
+                    {
+                        // Set options
+                    };
+                });
+            });
+```
