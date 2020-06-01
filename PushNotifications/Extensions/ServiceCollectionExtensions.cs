@@ -22,8 +22,8 @@ namespace PushNotifications.Extensions
                 serviceExtension.AddServices(services);
             }
 
-            services.AddSingleton<IPushNotificationFactory, PushNotificationsFactory>();
-            services.AddSingleton<IPushNotificationsFacade, PushNotificationFacade>();
+            services.AddScoped<IPushNotificationFactory, PushNotificationsFactory>();
+            services.AddScoped<IPushNotificationsFacade, PushNotificationFacade>();
             services.AddSingleton(options);
         }
     }
