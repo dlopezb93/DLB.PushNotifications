@@ -9,16 +9,16 @@ DLB.PushNotifications is a extensible library to use push notifications in easy 
 
 Install base the dependencies:
 
-```sh
+```csharp
 Install-Package DLB.PushNotifications
 ```
 Then in Startup.cs file (or anything) add next line:
-```sh
+```csharp
 using PushNotifications.Extensions;
 ```
 
 Finally in ServiceCollection class, we have avaible a extension method:
-```sh
+```csharp
 services.AddPushNotifications(p =>
 {
    
@@ -28,7 +28,7 @@ services.AddPushNotifications(p =>
 
 To send a Push Notifications only need inject 'IPushNotificationsFacade' interface and use 'SendPushNotificationAsync' method  async. In this example I used a DomainEvent with DomainEventHandler, however it can be used in any situation
 
-```sh
+```csharp
 public DomainEventHandler(ILogger<UserNotificationInsertedDomainEventHandler> logger,
                           IPushNotificationsFacade pushNotifications) 
         {
@@ -55,20 +55,20 @@ DLB.PushNotifications.Firebase is a extensible library to use firebase push noti
 
 Install base the dependencies:
 
-```sh
+```csharp
 Install-Package DLB.PushNotifications
 Install-Package DLB.PushNotifications.Firebase
 ```
 
 ### Configure
 Then in Startup.cs file (or anything) add next lines to add firebase integration:
-```sh
+```csharp
 using PushNotifications.Extensions;
 using PushNotifications.Firebase.Extensions
 ```
 
 Finally in ServiceCollection class, we have avaible a extension method:
-```sh
+```csharp
 services.AddPushNotifications(p =>
 {
         p.UseFirebase(conf =>
