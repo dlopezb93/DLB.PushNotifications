@@ -1,4 +1,4 @@
-# DLB.PushNotifications
+# Push notifications for Android and IOS using Firebase and APNS
 Push notifications for Firebase And APNS. Extension of Microsoft.Extensions.DependencyInjection
 
 ### DLB.Push.Notifications
