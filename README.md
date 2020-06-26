@@ -17,7 +17,8 @@ Then in Startup.cs file (or anything) add next line:
 using PushNotifications.Extensions;
 ```
 
-Finally in ServiceCollection class, we have avaible a extension method:
+Finally, in ServiceCollection class, we have available an extension method:
+
 ```csharp
 services.AddPushNotifications(p =>
 {
