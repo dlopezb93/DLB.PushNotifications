@@ -5,7 +5,7 @@ Push notifications for Firebase And APNS. Extension of Microsoft.Extensions.Depe
 
 ### Installation
 
-DLB.PushNotifications is a extensible library to use push notifications in easy way. To use this packge is neccesarry install DLB.PushNotificaions and a concret type. Firebase, APNS or both.
+DLB.PushNotificationsis an extensible library to use push notifications in easy way. To use this package is necessary installed DLB.PushNotificaions and a concrete type. Firebase, APNS or both.
 
 Install base the dependencies:
 
@@ -26,7 +26,7 @@ services.AddPushNotifications(p =>
 ```
 ### Usage
 
-To send a Push Notifications only need inject 'IPushNotificationsFacade' interface and use 'SendPushNotificationAsync' method  async. In this example I used a DomainEvent with DomainEventHandler, however it can be used in any situation
+To send a Push Notifications only need inject 'IPushNotificationsFacade' interface and use 'SendPushNotificationAsync' method since. In this example I used a DomainEvent with DomainEventHandler, however, it can be used in any situation
 
 ```csharp
 public DomainEventHandler(ILogger<UserNotificationInsertedDomainEventHandler> logger,
@@ -51,7 +51,7 @@ public DomainEventHandler(ILogger<UserNotificationInsertedDomainEventHandler> lo
 ### DLB.Push.Notifications.Firebase
 ### Installation
 
-DLB.PushNotifications.Firebase is a extensible library to use firebase push notifications in easy way. To use this packge is neccesarry install DLB.PushNotificaions and DLB.PushNotifications.Firebase
+DLB.PushNotifications.Firebase is an extensible library to use firebase push notifications in easy way. To use this packge is neccesary install DLB.PushNotificaions and DLB.PushNotifications.Firebase
 
 Install base the dependencies:
 
